@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tools Learning Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar for Desktop -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>📱 Digital Helper</h1>
+                <p>Learn digital tools easily</p>
+            </div>
+
+            <div class="quick-topics">
+                <h3>Quick Topics</h3>
+                <button class="topic-button" onclick="selectTopic('whatsapp')">
+                    <span>📱</span> WhatsApp Basics
+                </button>
+                <button class="topic-button" onclick="selectTopic('paytm')">
+                    <span>💳</span> Paytm Payments
+                </button>
+                <button class="topic-button" onclick="selectTopic('maps')">
+                    <span>🗺️</span> Google Maps
+                </button>
+                <button class="topic-button" onclick="selectTopic('email')">
+                    <span>📧</span> Email Setup
+                </button>
+                <button class="topic-button" onclick="selectTopic('youtube')">
+                    <span>🎥</span> YouTube Guide
+                </button>
+                <button class="topic-button" onclick="selectTopic('facebook')">
+                    <span>👥</span> Facebook Basics
+                </button>
+                <button class="topic-button" onclick="selectTopic('banking')">
+                    <span>🏦</span> Online Banking
+                </button>
+                <button class="topic-button" onclick="selectTopic('safety')">
+                    <span>🔒</span> Digital Safety
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                Your friendly digital learning assistant
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="chat-title">Digital Tools Assistant</div>
+                <button class="mobile-menu-btn" onclick="showMobileTopics()" style="display: none;">☰</button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message" id="welcomeMessage">
+                    <div class="welcome-emoji">🤖</div>
+                    <h2 class="welcome-title">Welcome to Digital Helper!</h2>
+                    <p class="welcome-subtitle">I can help you learn popular digital tools and apps step-by-step</p>
+
+                    <div class="welcome-topics">
+                        <div class="welcome-topic-card" onclick="selectTopic('whatsapp')">
+                            <div class="welcome-topic-icon">📱</div>
+                            <div class="welcome-topic-title">WhatsApp</div>
+                            <div class="welcome-topic-desc">Messaging, calls, groups</div>
+                        </div>
+                        <div class="welcome-topic-card" onclick="selectTopic('paytm')">
+                            <div class="welcome-topic-icon">💳</div>
+                            <div class="welcome-topic-title">Paytm</div>
+                            <div class="welcome-topic-desc">Digital payments, wallet</div>
+                        </div>
+                        <div class="welcome-topic-card" onclick="selectTopic('maps')">
+                            <div class="welcome-topic-icon">🗺️</div>
+                            <div class="welcome-topic-title">Google Maps</div>
+                            <div class="welcome-topic-desc">Navigation, directions</div>
+                        </div>
+                        <div class="welcome-topic-card" onclick="selectTopic('email')">
+                            <div class="welcome-topic-icon">📧</div>
+                            <div class="welcome-topic-title">Email</div>
+                            <div class="welcome-topic-desc">Gmail, sending emails</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <span>Assistant is typing</span>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea class="chat-input" id="chatInput" placeholder="Ask me anything about digital tools..."
+                        rows="1" onkeypress="handleKeyPress(event)" oninput="adjustTextareaHeight()"></textarea>
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Topics Overlay -->
+    <div class="mobile-topics-overlay" id="mobileTopicsOverlay">
+        <div class="mobile-topics-content">
+            <button class="close-overlay" onclick="hideMobileTopics()">×</button>
+            <div class="mobile-topics-header">
+                <h3>Choose a Topic</h3>
+            </div>
+            <button class="mobile-topic-btn" onclick="selectTopic('whatsapp'); hideMobileTopics();">
+                <span>📱</span> WhatsApp Basics
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('paytm'); hideMobileTopics();">
+                <span>💳</span> Paytm Payments
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('maps'); hideMobileTopics();">
+                <span>🗺️</span> Google Maps
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('email'); hideMobileTopics();">
+                <span>📧</span> Email Setup
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('youtube'); hideMobileTopics();">
+                <span>🎥</span> YouTube Guide
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('facebook'); hideMobileTopics();">
+                <span>👥</span> Facebook Basics
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('banking'); hideMobileTopics();">
+                <span>🏦</span> Online Banking
+            </button>
+            <button class="mobile-topic-btn" onclick="selectTopic('safety'); hideMobileTopics();">
+                <span>🔒</span> Digital Safety
+            </button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
